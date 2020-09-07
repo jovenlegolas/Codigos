@@ -3,14 +3,20 @@
   include('models/BD.php');
   include('models/MySql.php');
 
-  if( isset( $_POST['cadastro']) )
+  if( isset( $_POST['cadastro']) ) //vai verificar se o usuario acionou o formulario
   {
-     $nome = strip_tags( $_POST['nome'] );
-     $senha = strip_tags( md5( $_POST['senha'] ) );
-     $img = strip_tags( $_POST['img'] );
+     //vai receber os dados inseridos no formulario 
+     $nome =  $_POST['nome'];  // a variavel nome recebera o valor que o usuario inseriu no campo 'nome'
+     $senha = $_POST['senha']; // a variavel nome recebera o valor que o usuario inseriu no campo 'senha'
+     $img = "img1.jpg";
 
-     if( \models\BD::verifica('grades','nome = ?',array( $nome ) ) == false )
-        \models\BD::inserir('user', '?,?,?', array( $nome,$senha,$img ) );
+     if( \models\BD::verifica('user','nome = ?',array( $nome ) ) == true )
+     {
+         \models\BD::inserir('user', '?,?,?', array( $nome,$senha,$img ) );
+         @$_SESSION['msn'] = "Cadastro Efetuado!";
+     }
+     else
+        @$_SESSION['msn'] = "Nome existente!";
   }
 ?>
 
@@ -39,6 +45,41 @@
 	      <link rel="stylesheet" type="text/css" href="fonts/fontawesome/css/all.css" /> 
         <!--===============================================================================================-->
     </head>
+    <body>
+        <header>
+
+          <div class = "logo">
+              <img src = "img/logo.png" alt = "logo" />
+              <p> Instituto Federal Campus Urutai </p>
+          </div><!--/logo-->
+
+          <nav class = "div-social">
+              <ul>
+                 <li class = "whatsapp"> <a href= "#">   <i class="fab fa-whatsapp"></i>   </a></li>
+                 <li class = "fecebook"> <a href = "#">  <i class="fab fa-facebook-f"></i> </a></li>
+                 <li class = "twitter">  <a href = "#">  <i class="fab fa-twitter"></i>    </a></li>
+              </ul>
+          </nav><!--/div-social-->
+
+        </header>
+
+        <div class = "container">
+            <div class = "card">
+                <form method = "post">
+                    <div class = "title-card"> 
+                      <p class = "text-center"> Cadastre-se  </p>
+                    </div><!--/title-card-->
+                    <div class = "input-area">
+                       <p class = "text-center msn-alert"> <?php echo @$_SESSION['msn'] ?>  </p>
+                       <input type = "text" name = "nome" placeholder = "Nome de usuario" required  />
+                       <input type = "password" name = "senha"  placeholder = "Senha minimo 4 digitos" required pattern=".{4,}" />
+                       <input class = "btn-enviar" type = "submit" name = "cadastro" value = "Cadastre-se" />
+                    </div><!--/input-area-->
+                </form>
+            </div><!--/card-->
+        </div><!--/container-->
+
+    </body>
 
 
 </html>
