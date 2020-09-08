@@ -19,6 +19,16 @@ header
     grid-template-columns: 85% 15%;
 }
 
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
 .text-center
 {
     text-align: center;
@@ -109,7 +119,6 @@ nav > ul > li > a:hover
     border: 1px solid #000;
     border-radius: 5px;
     background: transparent;
-    margin: none;
     outline: none;
     margin-bottom: 3px;
 }
@@ -121,19 +130,158 @@ nav > ul > li > a:hover
 
 .input-area > .btn-enviar
 {
-    margin-top: 10%;
-    background: rgb(38, 218, 194);
-    border-radius: 10px;
+    padding: 5px;
+    margin: 10%;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
     border-color: rgb(212, 210, 210);
-    color: #fff;
+    outline: none;
+    margin-top: 30%;
+    border-radius: 4px;
+}
+
+.input-area > .btn-link
+{
+    border: 2px solid rgb(15, 1, 1);
 }
 
 .input-area > .btn-enviar:hover
 {
-    background: rgb(34, 199, 177);
-    border: 2px solid rgb(253, 252, 252);
-
+    border: 2px solid rgb(7, 167, 230);
 }
+
+.btn-show-pass 
+{
+    position: absolute;
+    margin-left: 80%;
+    font-size: 20px;
+    margin-top: 16px;
+    color: #000;
+}
+
+.container-title 
+{
+    background: rgb(22, 218, 191);
+    height: 200px;
+}
+
+.container-title > .title 
+{
+    margin-top: 70px;
+    position: absolute;
+    width: 20%;
+    margin-left: 40%;
+    font-size: 30px;
+}
+
+.container-title > .title h2
+{
+    color: rgb(58, 56, 56);
+    border-bottom: 2px solid rgb(58, 54, 54);
+}
+
+.input-busca 
+{
+    min-height: 70px;
+}
+
+.input-busca:hover
+{ 
+    box-shadow: 0.2rem 0.1rem 0.7rem 0.2rem #0cbdd4;
+}
+
+.input-busca:focus
+{
+    box-shadow: 0.2rem 0.1rem 0.7rem 0.2rem #0cbdd4;
+    border-color: #fff;
+}
+
+.icone-search 
+{
+    background: transparent;
+    border: none;
+    margin-left: 62%;
+    margin-top: -25px;
+    font-size: 25px;
+    color: rgb(44, 2, 23);
+    
+}
+
+.card-users
+{
+    display: flex;
+    flex-flow: wrap;
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+.card-user
+{
+    width: 28%;
+    margin: 1%;
+    height: 380px;
+    border-top: 4px solid rgb(38, 218, 194);
+    border-bottom: 4px solid rgb(38, 218, 194);
+    border-left: 1.5px solid rgb(38, 218, 194);
+    border-right: 1.5px solid rgb(38, 218, 194);
+    border-radius: 8px;
+}
+
+.card-user > .card-user-img > img
+{
+    max-width: 96%;
+    min-width: 96%;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 8px;
+    max-height: 180px;
+}
+
+.card-user > .card-user-dados
+{
+    margin-top: 30px;
+}
+
+.card-user > .card-user-dados > p
+{
+    margin-top: 15px;
+}
+
+.card-user > .card-user-dados > p > i
+{
+   margin-right: 5px;
+}
+
+.btn-editar
+{
+    width: 80%;
+    height: 35px;
+    margin-left: 10%;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    padding-top: 13px;
+    display: inline-block;
+    background: rgb(22, 218, 191);
+}
+
+.btn-editar:hover
+{
+    border: 2px solid #fff;
+    background: rgb(18, 235, 206);
+}
+
+.pesquisa-card 
+{
+    max-width: 80%;
+    min-width: 80%;
+    margin-left: 10%;
+    background: transparent;
+}
+
+
 
 @media (max-width: 1200px) 
 {
@@ -161,5 +309,39 @@ nav > ul > li > a:hover
         transform: translate(-50%,20%);
     }
 
+    .container-title > .title 
+    {
+        width: 40%;
+        margin-left: 30%;
+        font-size: 30px;
+    }
+
+    .card-users
+    {
+        margin-left: 0;
+    }
+
+    .card-user
+    {
+        width: 90%;
+        margin: 0;
+        margin-left: 5%;
+        margin-bottom: 8px;
+
+    }
+
+    .pesquisa-card 
+    {
+        max-width: 90%;
+        min-width: 90%;
+        margin-left: 5%;
+        background: transparent;
+    }
+
+    .icone-search 
+    {
+        margin-left: 53%;
+        margin-bottom: -26px;
+    }
 }
 

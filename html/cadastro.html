@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Cadastro</title>
         <!--====================================== Met Tags ===============================================-->	
         <meta charset="utf-8" />
         <!--===============================================================================================-->	
@@ -10,9 +10,9 @@
         <!--===============================================================================================-->	
         <link rel="shortcut icon" href="img/logo.png" />
         <!--===============================================================================================-->	
-        <meta name="description" content="Login" />
+        <meta name="description" content="Cadastro" />
         <!--===============================================================================================-->	
-        <meta name="keywords" content="Pagina de Login" />
+        <meta name="keywords" content="Pagina de Cadastro" />
         <!--===============================================================================================-->
         <meta name="author" content="Jovem Legolas" />
         <!--===============================================================================================-->
@@ -23,7 +23,6 @@
 	      <link rel="stylesheet" type="text/css" href="fonts/fontawesome/css/all.css" /> 
         <!--===============================================================================================-->
     </head>
-
     <body>
         <header>
 
@@ -46,31 +45,17 @@
             <div class = "card">
                 <form method = "post">
                     <div class = "title-card"> 
-                      <p class = "text-center"> Bem Vindo </p>
+                      <p class = "text-center"> Cadastre-se  </p>
                     </div><!--/title-card-->
                     <div class = "input-area">
                        <input type = "text" name = "nome" placeholder = "Nome de usuario" required  />
-                       <div class="input-icone-js">
-                            <span class="btn-show-pass"><i class="fas fa-eye"></i></span>
-                       </div>
-                       <input type = "password" class ="input-senha" name = "senha"  placeholder = "Senha minimo 4 digitos" required pattern=".{4,}" />
-                       <a class = "btn-enviar left" href="home.html" >Entrar</a>
-                       <a class = "btn-enviar btn-link right"  href="cadastro.html" >Cadastre</a>
+                       <input type = "password" name = "senha"  placeholder = "Senha minimo 4 digitos" required pattern=".{4,}" />
+                       <a class = "btn-enviar btn-link left" href="index.html" >Login</a>
+                       <a class = "btn-enviar right"  href="#" >Cadastre</a>
                     </div><!--/input-area-->
                 </form>
             </div><!--/card-->
         </div><!--/container-->
 
-        <footer>	
-            <!--=========================================== LIB ===============================================-->  
-            <script src="js/jquery.js"></script>
-            <!--===============================================================================================-->   
-                  
-            <!--============================================== Script =========================================-->  
-            <script src="js/main.js"></script>
-            <!--===============================================================================================-->             
-        </footer>
     </body>
-
-
 </html>
