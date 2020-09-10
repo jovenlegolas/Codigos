@@ -13,6 +13,8 @@
       $user = \models\BD::selectAll('user',$query,'nome', array() );
 
 ?>
+
+<!DOCTYPE html>
 <html>
     <head>
         <title>Home</title>

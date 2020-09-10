@@ -67,6 +67,7 @@
 
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <title>Editar</title>
