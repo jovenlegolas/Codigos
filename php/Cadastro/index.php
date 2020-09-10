@@ -3,7 +3,9 @@
   include('models/BD.php');
   include('models/MySql.php');
 
-  if( isset( $_POST['cadastro']) ) //vai verificar se o usuario acionou o formulario
+  $_SESSION['msn_cadastro'] = "";
+
+   if( isset( $_POST['cadastro']) ) //vai verificar se o usuario acionou o formulario
   {
      //vai receber os dados inseridos no formulario 
      $nome =  $_POST['nome'];  // a variavel nome recebera o valor que o usuario inseriu no campo 'nome'
@@ -13,10 +15,10 @@
      if( \models\BD::verifica('user','nome = ?',array( $nome ) ) == true )
      {
          \models\BD::inserir('user', '?,?,?', array( $nome,$senha,$img ) );
-         @$_SESSION['msn'] = "Cadastro Efetuado!";
+         $_SESSION['msn_cadastro'] = "Cadastro Efetuado!";
      }
      else
-        @$_SESSION['msn'] = "Nome existente!";
+         $_SESSION['msn_cadastro'] = "Nome existente!";
   }
 ?>
 
@@ -41,8 +43,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
         <!--============================================= Css =============================================-->	
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-	      <!--===============================================================================================-->	
-	      <link rel="stylesheet" type="text/css" href="fonts/fontawesome/css/all.css" /> 
+	    <!--===============================================================================================-->	
+	    <link rel="stylesheet" type="text/css" href="fonts/fontawesome/css/all.css" /> 
         <!--===============================================================================================-->
     </head>
     <body>
@@ -70,7 +72,7 @@
                       <p class = "text-center"> Cadastre-se  </p>
                     </div><!--/title-card-->
                     <div class = "input-area">
-                       <p class = "text-center msn-alert"> <?php echo @$_SESSION['msn'] ?>  </p>
+                       <p class = "text-center msn-alert"> <?php echo $_SESSION['msn_cadastro'] ?>  </p>
                        <input type = "text" name = "nome" placeholder = "Nome de usuario" required  />
                        <input type = "password" name = "senha"  placeholder = "Senha minimo 4 digitos" required pattern=".{4,}" />
                        <input class = "btn-enviar" type = "submit" name = "cadastro" value = "Cadastre-se" />

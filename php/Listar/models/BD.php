@@ -83,6 +83,11 @@
 															
 		}
 		
+		public static function redirect( $url ) // medoto responsavel por instancia arquivos com base na url
+		{
+			echo '<script>location.href="'.$url.'"</script>';
+			die();
+		}
 	
         
      
