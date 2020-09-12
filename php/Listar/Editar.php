@@ -79,14 +79,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!--===============================================================================================-->	
         <link rel="shortcut icon" href="img/logo.png" />
-        <!--===============================================================================================-->	
-        <meta name="description" content="Editar" />
-        <!--===============================================================================================-->	
-        <meta name="keywords" content="Ediar Usuarios" />
-        <!--===============================================================================================-->
-        <meta name="author" content="Jovem Legolas" />
-        <!--===============================================================================================-->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
         <!--============================================= Css =============================================-->	
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 	     <!--===============================================================================================-->	
@@ -95,23 +87,10 @@
     </head>
     <body>
         <header>
-
-          <div class = "logo">
-              <img src = "img/logo.png" alt = "logo" />
-              <p> Instituto Federal Campus Urutai </p>
-          </div><!--/logo-->
-
-          <nav class = "div-social">
-              <ul>
-                 <li class = "whatsapp"> <a href= "#">   <i class="fab fa-whatsapp"></i>   </a></li>
-                 <li class = "fecebook"> <a href = "#">  <i class="fab fa-facebook-f"></i> </a></li>
-                 <li class = "twitter">  <a href = "#">  <i class="fab fa-twitter"></i>    </a></li>
-              </ul>
-          </nav><!--/div-social-->
-
         </header>
 
         <div class = "container">
+
             <div class = "card">
                 <form method = "post">
                     <div class = "title-card"> 
@@ -128,9 +107,8 @@
                     </div><!--/input-area-->
                 </form>
             </div><!--/card-->
+            
         </div><!--/container-->
-
+        
     </body>
-
-
 </html>
